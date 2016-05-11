@@ -48,7 +48,7 @@ names(newdata)<-gsub("BodyBody", "Body", names(newdata))
 library(data.table)
 dt<-data.table(newdata)
 tidydata<-dt[,lapply(.SD,mean),by='subject,activity_name']
-write.table(tidydata,file="./data/tidydata.txt")
+write.table(tidydata,file="./data/tidydata.txt",row.name=FALSE)
 
 
 
